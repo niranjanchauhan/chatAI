@@ -85,7 +85,7 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-
+    
     const response = await fetch('https://chatai-cjvf.onrender.com', {
         method: 'POST',
         headers: {
@@ -98,7 +98,7 @@ const handleSubmit = async (e) => {
 
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
-
+    
     if (response.ok) {
         const data = await response.json();
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
